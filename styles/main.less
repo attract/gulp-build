@@ -1,0 +1,266 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
+  -webkit-tap-highlight-color: transparent;
+  -moz-tap-highlight-color: transparent;
+  -ms-tap-highlight-color: transparent;
+
+  -webkit-font-smoothing: antialiased;
+
+  // fix for Slick slider in Firefox
+  //min-height: 0;
+  //min-width: 0;
+  // fix for Slick slider in Firefox
+
+  &:active, &:focus {
+    outline: none;
+  }
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  color: #44566C;
+
+  position: relative;
+  margin: 0;
+  padding: 0;
+
+  &.slider-mode {
+    overflow: hidden;
+  }
+  &.hidden {
+    overflow: hidden;
+    height: 100vh;
+  }
+}
+
+
+.wrapper {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  padding-top: 140px;
+
+  &.wrapper-blured {
+    filter: blur(9px);
+
+    // fix for apple
+    // disable content scroll when popup opened
+    // input caret change position issue in fixed position popup
+    height: 100%;
+    overflow: hidden;
+  }
+}
+
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.slick-slide {
+  .container {
+    height: 100vh;
+  }
+}
+
+
+.panel {
+  position: relative;
+  //display: flex;
+  //flex-direction: column;
+  //justify-content: center;
+  width: 100%;
+  padding: 100px 50px 35px 35px;
+  z-index: 1;
+}
+
+.aside {
+  position: relative;
+  width: 20%;
+  min-width: 280px;
+  max-width: 280px;
+  background-color: #126F62;
+  //overflow: hidden;
+  //transition: .2s;
+
+  &.aside-lg {
+    width: 25%;
+    min-width: 350px;
+  }
+}
+
+.aside-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  background-position: 50% 50%;
+}
+
+.currency-block {
+  position: absolute;
+  top: 120px;
+  left: 30px;
+
+  .line-height(12,17);
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
+  z-index: 1;
+}
+
+.drop-animation {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  //transition: .2s;
+
+  canvas {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -45%);
+    animation-name: drop-fade;
+    animation-duration: .5s;
+
+    @keyframes drop-fade {
+      0% {opacity: 0;}
+      50% {opacity: .5;}
+      100% {opacity: 1;}
+    }
+  }
+}
+
+@media @h700 and (max-width: 993px) and (max-width: 1280px) {
+  .currency-block {
+    top: 100px;
+  }
+}
+@media @h650 and (min-width: 993px) and (max-width: 1280px)  {
+  .currency-block {
+    top: 80px;
+  }
+}
+@media @h600 and (min-width: 993px) and (max-width: 1280px)  {
+  .currency-block {
+    top: 70px;
+  }
+}
+
+@media screen and (min-width: 1600px) and (min-height: 650px){
+  .aside {
+    width: 30%;
+    min-width: 360px;
+    max-width: none;
+
+  }
+
+}
+
+@media screen and (min-width: 1480px) and (min-height: 650px){
+  .panel {
+    padding-right: 50px!important;
+    padding-left: 7.5%!important;
+  }
+
+  .drop-animation {
+    transform: scale(1.5);
+  }
+}
+
+@media @laptopLg {
+  .aside {
+    z-index: -1;
+    &.aside-lg {
+      width: 30%;
+      min-width: 315px;
+    }
+  }
+}
+
+@media @laptop {
+  .container {
+    //min-height: 100vh;
+    height: auto;
+  }
+}
+
+@media @tablet {
+  .panel {
+    display: block;
+    padding: 100px 35px;
+  }
+  .aside {
+    min-width: 235px;
+    &.aside-lg {
+      min-width: 235px;
+    }
+  }
+}
+
+@media @mobileLg {
+
+  .container {
+    display: block;
+  }
+
+  .panel {
+    padding: 100px 20px 70px;
+  }
+  .aside {
+    height: 550px;
+    width: 100%;
+    max-width: none;
+
+    &.aside-lg {
+      width: 100%;
+    }
+
+    .aside-img {
+      width: 100%!important;
+      height: 100%!important;
+      background-size: 490px!important;
+      top: auto!important;
+      bottom: 0!important;
+      right: 0!important;
+      left: auto!important;
+    }
+  }
+
+  .currency-block {
+    top: 20px;
+    left: 20px;
+  }
+
+  .drop-animation {
+    top: auto!important;
+    bottom: 0;
+
+    canvas {
+      height: 1300px !important;
+      width: 1300px !important;
+    }
+  }
+
+}
+
+@media @mobileMd {
+  .drop-animation {
+    canvas {
+      height: 900px !important;
+      width: 900px !important;
+    }
+  }
+}

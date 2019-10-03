@@ -1,0 +1,59 @@
+.font-size(@font-size-px) {
+  font-size: @font-size-px/16rem;
+}
+
+.line-height(@font-size-px, @line-height-px) {
+  font-size: @font-size-px/16rem;
+  line-height: @line-height-px/@font-size-px;
+}
+
+.clearListStyles() {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Custom scrolls */
+.custom-scroll-v() {
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    height: 0;
+    width: 6px;
+    background-color: #ecedee;
+    transition: @transition;
+    opacity: .75;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 0;
+    border-radius: 10px;
+    background-color: #c0bebe;
+    transition: @transition;
+  }
+
+  &:hover::-webkit-scrollbar {
+    opacity: 1;
+  }
+}
+
+.custom-scroll-h() {
+  overflow-x: auto;
+
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 4px;
+    background-color: #ecedee;
+    transition: @transition;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 0;
+    border-radius: 7px;
+    background-color: #c0bebe;
+    transition: @transition;
+  }
+
+  &:hover::-webkit-scrollbar {
+    height: 5px;
+  }
+}
