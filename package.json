@@ -36,7 +36,7 @@
   "dependencies": {
     "gulp-hash": "^4.2.2",
     "gulp-replace-assets": "0.0.4",
-    "jquery": "3.2.1",
+    "jquery": "3.5.0",
     "natives": "^1.1.6",
     "remodal": "1.1.1",
     "slick-carousel": "^1.8.1",
